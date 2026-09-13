@@ -6,12 +6,12 @@ from pathlib import Path
 
 @dataclass(frozen=True)
 class ExperimentConfig:
-    """Notebook v2.3 defaults, exposed without changing their values."""
+    """Experiment defaults for training and evaluation."""
 
     mode: str = "FAST"
     fake_dataset: str = "OpenRL/DeepFakeFace"
     real_dataset: str = "nielsr/CelebA-faces"
-    data_root: Path = Path("data/unfooled_data_v2_2")
+    data_root: Path = Path("data")
     val_frac: float = 0.15
     test_frac: float = 0.15
     seed: int = 2025
@@ -51,7 +51,7 @@ class ExperimentConfig:
 
     @property
     def mask_cache_dir(self) -> Path:
-        return self.data_root / "mask_cache_v2_2"
+        return self.data_root / "mask_cache"
 
     def as_dict(self) -> dict:
         values = asdict(self)
@@ -73,4 +73,3 @@ def make_config(mode: str = "FAST", data_root: str | Path | None = None) -> Expe
     if data_root is not None:
         kwargs["data_root"] = Path(data_root)
     return ExperimentConfig(**kwargs)
-

@@ -17,13 +17,13 @@ from PIL import Image
 from unfooled.config import make_config
 from unfooled.data import build_dataloaders, download_datasets
 from unfooled.evaluation import evaluate_robustness_suite
-from unfooled.model import UnFooledNet
+from unfooled.model import AttackAwareDeepfakeDetector
 from unfooled.training import train
 from unfooled.utils import seed_everything
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Train the UnFooled v2.3 model.")
+    parser = argparse.ArgumentParser(description="Train the attack-aware detector.")
     parser.add_argument("--mode", choices=["FAST", "PRO"], default="FAST")
     parser.add_argument("--data-root", type=Path, default=None)
     parser.add_argument("--output-dir", type=Path, default=Path("outputs"))
@@ -74,7 +74,7 @@ def main() -> None:
             "test": len(test_loader.dataset),
         }
     )
-    model = UnFooledNet().to(device)
+    model = AttackAwareDeepfakeDetector().to(device)
     print(
         "params (M):",
         round(sum(parameter.numel() for parameter in model.parameters()) / 1e6, 2),
@@ -82,7 +82,7 @@ def main() -> None:
     history, optimizer = train(model, train_loader, val_loader, config, device)
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    checkpoint_path = args.output_dir / "unfooled_v2_3_final.pt"
+    checkpoint_path = args.output_dir / "model.pt"
     torch.save(
         {
             "model_state_dict": model.state_dict(),
@@ -103,7 +103,7 @@ def main() -> None:
             config.tta_n,
             with_attack_iou=config.eval_iou_on_attacks,
         )
-        results_path = args.output_dir / "test_metrics.json"
+        results_path = args.output_dir / "metrics.json"
         results_path.write_text(json.dumps(results, indent=2), encoding="utf-8")
         print(json.dumps(results, indent=2))
         print("Saved metrics:", results_path)
@@ -111,4 +111,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

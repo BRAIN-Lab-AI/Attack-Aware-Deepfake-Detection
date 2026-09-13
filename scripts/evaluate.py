@@ -16,16 +16,18 @@ from PIL import Image
 from unfooled.config import make_config
 from unfooled.data import build_dataloaders
 from unfooled.evaluation import evaluate_robustness_suite
-from unfooled.model import UnFooledNet
+from unfooled.model import AttackAwareDeepfakeDetector
 from unfooled.utils import seed_everything
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Evaluate an UnFooled checkpoint.")
+    parser = argparse.ArgumentParser(description="Evaluate a trained checkpoint.")
     parser.add_argument("checkpoint", type=Path)
     parser.add_argument("--mode", choices=["FAST", "PRO"], default="FAST")
     parser.add_argument("--data-root", type=Path, default=None)
-    parser.add_argument("--output", type=Path, default=Path("outputs/test_metrics.json"))
+    parser.add_argument(
+        "--output", type=Path, default=Path("outputs/metrics.json")
+    )
     parser.add_argument("--no-attack-iou", action="store_true")
     return parser.parse_args()
 
@@ -38,7 +40,7 @@ def main() -> None:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     _, _, test_loader = build_dataloaders(config)
     checkpoint = torch.load(args.checkpoint, map_location=device, weights_only=False)
-    model = UnFooledNet(pretrained=False).to(device)
+    model = AttackAwareDeepfakeDetector(pretrained=False).to(device)
     model.load_state_dict(checkpoint["model_state_dict"])
     results = evaluate_robustness_suite(
         model,
@@ -56,4 +58,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

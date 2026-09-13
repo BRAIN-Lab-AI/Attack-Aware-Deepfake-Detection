@@ -94,7 +94,7 @@ class MaskHeadFPN(nn.Module):
         return self.out(mask)
 
 
-class UnFooledNet(nn.Module):
+class AttackAwareDeepfakeDetector(nn.Module):
     def __init__(self, pretrained: bool = True):
         super().__init__()
         weights = models.ResNet50_Weights.IMAGENET1K_V2 if pretrained else None

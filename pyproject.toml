@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "unfooled"
-version = "2.3.0"
+version = "0.1.0"
 description = "Attack-aware deepfake detection under counter-forensic manipulations"
 requires-python = ">=3.10"
 dynamic = ["dependencies"]
@@ -14,8 +14,4 @@ dependencies = {file = ["requirements.txt"]}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-
-[tool.pytest.ini_options]
-pythonpath = ["src"]
-testpaths = ["tests"]
 

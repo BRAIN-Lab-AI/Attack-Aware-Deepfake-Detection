@@ -32,8 +32,6 @@ desktop.ini
 
 # Data, caches, checkpoints, and generated results
 data/
-unfooled_data*/
-mask_cache*/
 checkpoints/
 outputs/
 results/
@@ -47,4 +45,3 @@ results/
 .env.*
 !.env.example
 hf_token*
-
