@@ -1,26 +1,21 @@
 [build-system]
-requires = ["setuptools>=69", "wheel"]
+requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "unfooled"
-version = "0.1.0"
-description = "Attack-aware robust deepfake detection"
-authors = [{name="Noor Fatima"}]
-readme = "README.md"
-requires-python = ">=3.9"
-classifiers = [
-  "Programming Language :: Python :: 3",
-  "License :: OSI Approved :: MIT License",
-  "Operating System :: OS Independent",
-]
+version = "2.3.0"
+description = "Attack-aware deepfake detection under counter-forensic manipulations"
+requires-python = ">=3.10"
+dynamic = ["dependencies"]
 
-[project.scripts]
-unfooled-train = "unfooled.experiments.train_entry:main"
-unfooled-eval  = "unfooled.experiments.eval_entry:main"
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
-[tool.setuptools.package-data]
-unfooled = ["py.typed"]
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+

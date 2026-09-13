@@ -1,10 +1,50 @@
+# Python
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
 .venv/
-.ipynb_checkpoints/
-data/
-outputs/
-runs/
-weights/
-checkpoints/
+venv/
+env/
+
+# Editors and operating systems
+.idea/
+.vscode/
 .DS_Store
+Thumbs.db
+desktop.ini
+
+# Windows/WSL downloaded-file metadata
+*:Zone.Identifier
+*Zone.Identifier
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data, caches, checkpoints, and generated results
+data/
+unfooled_data*/
+mask_cache*/
+checkpoints/
+outputs/
+results/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+hf_token*
+

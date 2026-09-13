@@ -1,2 +1,7 @@
-__all__ = ["models", "data", "training", "utils", "__version__"]
-__version__ = "0.1.0"
+"""UnFooled attack-aware deepfake detection package."""
+
+from .config import ExperimentConfig
+from .model import UnFooledNet
+
+__all__ = ["ExperimentConfig", "UnFooledNet"]
+
