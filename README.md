@@ -253,19 +253,19 @@ The following tables present a compact selection of the quantitative results rep
   <sub>Representative detection predictions and spatial evidence maps under clean and counter-forensic conditions.</sub>
 </p>
 
-### Robustness under counter-forensic transformations
+### Stability across repeated runs
 
-The detector maintains complete ranking separation on the matched clean and attacked evaluation sets. Regrain is the most challenging condition in terms of calibration.
+Performance remains stable across five independently seeded runs. Values are reported as mean ± standard deviation; accuracy and ECE use a decision threshold of 0.5.
 
-| Condition | ROC AUC | Average Precision | ECE ↓ |
+| Condition | ROC AUC | Accuracy | ECE ↓ |
 |:---|---:|---:|---:|
-| Clean | 1.0000 | 1.0000 | 0.0008 |
-| JPEG | 1.0000 | 1.0000 | 0.0039 |
-| Warp | 1.0000 | 1.0000 | 0.0013 |
-| Regrain | 1.0000 | 1.0000 | 0.0196 |
-| Seam | 1.0000 | 1.0000 | 0.0007 |
-| Gamma | 1.0000 | 1.0000 | 0.0007 |
-| Transcode | 1.0000 | 1.0000 | 0.0018 |
+| Clean | 1.0000 ± 0.0000 | 0.9967 ± 0.0035 | 0.0063 ± 0.0025 |
+| JPEG | 0.9998 ± 0.0002 | 0.9767 ± 0.0188 | 0.0129 ± 0.0091 |
+| Warp | 1.0000 ± 0.0000 | 0.9950 ± 0.0046 | 0.0064 ± 0.0036 |
+| Regrain | 0.9997 ± 0.0002 | 0.8342 ± 0.1071 | 0.0844 ± 0.0604 |
+| Seam | 1.0000 ± 0.0000 | 0.9983 ± 0.0023 | 0.0041 ± 0.0034 |
+| Gamma | 1.0000 ± 0.0000 | 0.9983 ± 0.0023 | 0.0044 ± 0.0027 |
+| Transcode | 1.0000 ± 0.0000 | 0.9925 ± 0.0054 | 0.0075 ± 0.0013 |
 
 
 ### Comparison with clean-trained baselines
