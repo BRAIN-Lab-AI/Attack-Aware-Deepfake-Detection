@@ -17,6 +17,38 @@
 </p>
 
 <p align="center">
+  <a href="https://brain-lab-ai.github.io/Attack-Aware-Deepfake-Detection/">
+    <strong>Project Page</strong>
+  </a>
+  &nbsp;•&nbsp;
+  <a href="https://github.com/BRAIN-Lab-AI/Attack-Aware-Deepfake-Detection">
+    <strong>Code</strong>
+  </a>
+  &nbsp;•&nbsp;
+  <span><strong>Paper</strong></span>
+</p>
+
+<div align="center">
+  <a href="https://github.com/BRAIN-Lab-AI/Attack-Aware-Deepfake-Detection"><img src="https://img.shields.io/badge/GitHub-Code-181717?logo=github&amp;logoColor=white" alt="GitHub Code"></a>
+  <a href="https://brain-lab-ai.github.io/Attack-Aware-Deepfake-Detection/"><img src="https://img.shields.io/badge/Project-Page-8265F4?logo=githubpages&amp;logoColor=white" alt="Project Page"></a>
+  <img src="https://img.shields.io/badge/Paper-Coming_Soon-ef5d60?logo=readthedocs&amp;logoColor=white" alt="Paper Coming Soon">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&amp;logoColor=white" alt="Python 3.10+">
+  <a href="https://github.com/BRAIN-Lab-AI/Attack-Aware-Deepfake-Detection/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-F5C518?logo=opensourceinitiative&amp;logoColor=white" alt="MIT License"></a>
+  <a href="https://github.com/BRAIN-Lab-AI/Attack-Aware-Deepfake-Detection/stargazers"><img src="https://img.shields.io/github/stars/BRAIN-Lab-AI/Attack-Aware-Deepfake-Detection?logo=github&amp;label=Stars&amp;color=8265F4" alt="GitHub Stars"></a>
+</div>
+
+<p align="center">
+  <img src="assets/architecture.jpg" width="100%" alt="Attack-aware dual-stream deepfake detection architecture">
+</p>
+<p align="center">
+  <sub>Overview of the attack-aware dual-stream architecture, worst-of-<i>K</i> training, and weakly supervised evidence localization.</sub>
+</p>
+
+---
+
+<h2 align="center">Table of Contents</h2>
+
+<p align="center">
   <a href="#abstract">Abstract</a> &nbsp;|&nbsp;
   <a href="#installation">Installation</a> &nbsp;|&nbsp;
   <a href="#quick-start">Quick Start</a> &nbsp;|&nbsp;
@@ -24,18 +56,6 @@
   <a href="#evaluation">Evaluation</a> &nbsp;|&nbsp;
   <a href="#quantitative-results">Results</a> &nbsp;|&nbsp;
   <a href="#repository-structure">Repository Structure</a>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&amp;logoColor=white" alt="Python 3.10+">
-  <img src="https://img.shields.io/badge/PyTorch-2.4.0-EE4C2C?logo=pytorch&amp;logoColor=white" alt="PyTorch 2.4.0">
-</p>
-
-<p align="center">
-  <img src="assets/architecture.jpg" width="100%" alt="Attack-aware dual-stream deepfake detection architecture">
-</p>
-<p align="center">
-  <sub>Overview of the attack-aware dual-stream architecture, worst-of-<i>K</i> training, and weakly supervised evidence localization.</sub>
 </p>
 
 ---
